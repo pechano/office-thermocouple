@@ -208,7 +208,8 @@ case 1:
 	//jeg har også brug for en analog pin her med en hjul på. A0 til A5 kan bruges.
 firstCycle = true;
 offset = map(analogRead(A0),0,1023,0,1440);
-tempOffset = map(analogRead(A1),0,1023,-10,10);
+tempOffset = map(analogRead(A1),0,1023,-100,100);
+tempOffset = tempOffset/100;
 
 long int minuteOffset = offset % 60;
 long int hourOffset = offset - minuteOffset;
